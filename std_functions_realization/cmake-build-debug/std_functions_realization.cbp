@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug"/>
+				<Option working_dir="/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug"/>
+				<Option working_dir="/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="std_functions_realization">
-				<Option output="/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/std_functions_realization" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug"/>
+				<Option output="/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/std_functions_realization" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -43,15 +43,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 std_functions_realization"/>
-					<CompileFile command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 std_functions_realization"/>
+					<CompileFile command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="std_functions_realization/fast">
-				<Option output="/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/std_functions_realization" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug"/>
+				<Option output="/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/std_functions_realization" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -65,27 +65,27 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 std_functions_realization/fast"/>
-					<CompileFile command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 std_functions_realization/fast"/>
+					<CompileFile command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug"/>
+				<Option working_dir="/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j4 -f &quot;/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/maxim/CLionProjects/std_functions_realization/main.cpp">
+		<Unit filename="/home/maxim/CLionProjects/coding_tasks/std_functions_realization/main.cpp">
 			<Option target="std_functions_realization"/>
 		</Unit>
-		<Unit filename="/home/maxim/CLionProjects/std_functions_realization/CMakeLists.txt">
+		<Unit filename="/home/maxim/CLionProjects/coding_tasks/std_functions_realization/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

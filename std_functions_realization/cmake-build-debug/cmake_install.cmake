@@ -1,4 +1,4 @@
-# Install script for directory: /home/maxim/CLionProjects/std_functions_realization
+# Install script for directory: /home/maxim/CLionProjects/coding_tasks/std_functions_realization
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/maxim/CLionProjects/std_functions_realization/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

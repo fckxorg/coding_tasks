@@ -1,4 +1,4 @@
-/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/bin/make -DCMAKE_C_COMPILER=/bin/gcc -DCMAKE_CXX_COMPILER=/bin/g++ -G "CodeBlocks - Unix Makefiles" /home/maxim/CLionProjects/std_functions_realization
+/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/bin/make -DCMAKE_C_COMPILER=/bin/gcc -DCMAKE_CXX_COMPILER=/bin/g++ -G "CodeBlocks - Unix Makefiles" /home/maxim/CLionProjects/coding_tasks/std_functions_realization
 -- The C compiler identification is GNU 9.1.0
 -- The CXX compiler identification is GNU 9.1.0
 -- Check for working C compiler: /bin/gcc
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/maxim/CLionProjects/std_functions_realization/cmake-build-debug
+-- Build files have been written to: /home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug
