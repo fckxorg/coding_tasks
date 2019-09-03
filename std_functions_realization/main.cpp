@@ -4,16 +4,16 @@
 int custom_puts (const char *str)
 {
     assert (str);
-    const char* curr  = str;
+    const char *curr = str;
     while (*curr)
     {
-        if (fputc (*curr, stdout) == EOF)
+        if (fputc(*curr, stdout) == EOF)
         {
             return EOF;
         }
         curr++;
     }
-    return (size_t)(curr-str+1);
+    return (size_t) (curr - str + 1);
 }
 
 char *custom_fgets (char *str, size_t amount, FILE *stream)
@@ -25,18 +25,18 @@ char *custom_fgets (char *str, size_t amount, FILE *stream)
         return NULL;
     }
 
-    char* curr = str;
+    char *curr = str;
     char cursor = 0;
-    cursor = getc(stream);
-    while (cursor && curr-str < amount)
+    cursor = getc (stream);
+    while (cursor && curr - str < amount)
     {
         *curr = cursor;
         cursor = getc (stream);
         curr++;
     }
-    if (curr-str == 0)
+    if (curr - str == 0)
     {
-       return NULL;
+        return NULL;
     }
     return str;
 
@@ -51,10 +51,10 @@ char *custom_itoa (int number, char *buffer, int base = 10)
      * @param base base specifier, default is 10
      * @return buffer pointer to buffer start
      * */
-    assert(buffer);
-    assert(number);
+    assert (buffer);
+    assert (number);
 
-    char* curr = buffer;
+    char *curr = buffer;
     while (number != 0)
     {
         if (number % base < 10)
@@ -66,7 +66,7 @@ char *custom_itoa (int number, char *buffer, int base = 10)
             *curr = 'A' + number % base - 10;
         }
         curr++;
-        number/=base;
+        number /= base;
     }
     char tmp = 0;
     for (int j = 0; j < (curr - buffer) / 2; j++)
@@ -79,8 +79,7 @@ char *custom_itoa (int number, char *buffer, int base = 10)
 }
 
 
-
-int custom_atoi (const char *str)
+int custom_atoi(const char *str)
 {
     /*! Interprets an integer value in a byte string pointed to by str
      * @param str pointer to a byte string
@@ -102,15 +101,15 @@ int custom_atoi (const char *str)
     return number;
 }
 
-int main ()
+int main()
 {
     char str[] = "Linus Torvalds";
-    int status_code = custom_puts(str);
+    int status_code = custom_puts (str);
     const int ITOA_TEST_VALUE = 42;
     char buffer[10] = {};
-    char second_buffer[10]= {};
-    printf ("Status code: %d\n", status_code);
-    printf ("atoi output: %d\n", custom_atoi("junk123"));
-    printf ("itoa output: %s\n", custom_itoa(ITOA_TEST_VALUE, buffer, 2));
+    char second_buffer[10] = {};
+    printf("Status code: %d\n", status_code);
+    printf("atoi output: %d\n", custom_atoi ("junk123"));
+    printf("itoa output: %s\n", custom_itoa (ITOA_TEST_VALUE, buffer, 2));
     return 0;
 }
