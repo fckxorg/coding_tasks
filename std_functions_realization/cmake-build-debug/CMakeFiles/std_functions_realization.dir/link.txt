@@ -1,0 +1,1 @@
+/bin/g++  -g   CMakeFiles/std_functions_realization.dir/main.cpp.o  -o std_functions_realization 
