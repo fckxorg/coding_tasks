@@ -105,7 +105,7 @@ void getStringsStarts (char *file_data, int file_size, char **string_starts)
 
   int line = 0;
 
-  string_starts[line] = &file_data[0];
+  string_starts[line] = file_data;
   for (int i = 1; i < file_size; i++)
     {
       if (file_data[i - 1] == '\n')
