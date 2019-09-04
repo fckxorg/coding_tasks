@@ -84,14 +84,14 @@ int compareStringsUpgrade(const void *first_string, const void *second_string){
 }
 
 int compareStrings(const void *first_string, const void *second_string) {
-    int i = 0;
     char* arg1 = *((char**) first_string);
     char* arg2 = *((char**) second_string);
 
-    while (arg1[i] == arg2[i]) {
-        i++;
+    while (arg1 == arg2 && *arg1) {
+        arg1++;
+        arg2++;
     }
-    int result = arg1[i] - arg2[i];
+    int result = *arg1 - *arg2;
     if (result > 0){
       return 1;
     }
