@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
-
+// TODO add tests
 void swap (char *first_character, char *second_character)
 {
   char tmp = 0;
@@ -132,7 +132,7 @@ int custom_atoi (const char *str)
         }
       str++;
     }
-    
+
   return number;
 }
 

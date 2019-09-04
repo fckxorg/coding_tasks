@@ -1,0 +1,3 @@
+/home/maxim/CLionProjects/coding_tasks/poetry/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/maxim/CLionProjects/coding_tasks/poetry/cmake-build-debug/CMakeFiles/poetry.dir
+/home/maxim/CLionProjects/coding_tasks/poetry/cmake-build-debug/CMakeFiles/edit_cache.dir
