@@ -48,6 +48,7 @@ int getFileSize (char *filepath)
   fseek (file, 0, SEEK_END);
   file_size = ftell (file);
   fclose (file);
+
   return file_size;
 }
 
@@ -55,20 +56,17 @@ int getNumberOfLines (char *file_data)
 {
   assert(file_data);
 
-  char cursor = 0;
-  int i = 0;
   int n_lines = 0;
 
-  cursor = file_data[i];
-  while (cursor != '\0')
+  while (*file_data)
     {
-      if (cursor == '\n')
+      if (*file_data == '\n')
         {
           n_lines++;
         }
-      i++;
-      cursor = file_data[i];
+      file_data++;
     }
+
   return n_lines;
 }
 
