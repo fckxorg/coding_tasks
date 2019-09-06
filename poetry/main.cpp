@@ -6,8 +6,8 @@ int main ()
 {
   printf ("Provide filepath to file you want to sort strings in: ");
 
-  int MAX_FILENAME_LENGTH = 500;
-  char filename[MAX_FILENAME_LENGTH];
+  const int MAX_FILENAME_LENGTH = 500;
+  char filename[MAX_FILENAME_LENGTH] = {};
   scanf ("%s", filename);
 
   int file_size = getFileSize (filename);
