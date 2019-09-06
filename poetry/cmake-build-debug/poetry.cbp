@@ -85,6 +85,12 @@
 		<Unit filename="/home/maxim/CLionProjects/coding_tasks/poetry/main.cpp">
 			<Option target="poetry"/>
 		</Unit>
+		<Unit filename="/home/maxim/CLionProjects/coding_tasks/poetry/poetry_funcs.cpp">
+			<Option target="poetry"/>
+		</Unit>
+		<Unit filename="/home/maxim/CLionProjects/coding_tasks/poetry/poetry_funcs.h">
+			<Option target="poetry"/>
+		</Unit>
 		<Unit filename="/home/maxim/CLionProjects/coding_tasks/poetry/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

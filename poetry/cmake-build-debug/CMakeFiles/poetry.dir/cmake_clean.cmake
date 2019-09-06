@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/poetry.dir/main.cpp.o"
+  "CMakeFiles/poetry.dir/poetry_funcs.cpp.o"
   "poetry"
   "poetry.pdb"
 )

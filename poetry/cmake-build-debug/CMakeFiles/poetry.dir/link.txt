@@ -1,1 +1,1 @@
-/bin/g++  -g   CMakeFiles/poetry.dir/main.cpp.o  -o poetry 
+/bin/g++  -g   CMakeFiles/poetry.dir/main.cpp.o CMakeFiles/poetry.dir/poetry_funcs.cpp.o  -o poetry 

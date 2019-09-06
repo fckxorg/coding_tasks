@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/maxim/CLionProjects/coding_tasks/poetry/main.cpp" "/home/maxim/CLionProjects/coding_tasks/poetry/cmake-build-debug/CMakeFiles/poetry.dir/main.cpp.o"
+  "/home/maxim/CLionProjects/coding_tasks/poetry/poetry_funcs.cpp" "/home/maxim/CLionProjects/coding_tasks/poetry/cmake-build-debug/CMakeFiles/poetry.dir/poetry_funcs.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
