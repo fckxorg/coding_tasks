@@ -70,17 +70,47 @@ CMakeFiles/std_functions_realization.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/std_functions_realization.dir/main.cpp.s"
 	/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxim/CLionProjects/coding_tasks/std_functions_realization/main.cpp -o CMakeFiles/std_functions_realization.dir/main.cpp.s
 
+CMakeFiles/std_functions_realization.dir/service_funcs.cpp.o: CMakeFiles/std_functions_realization.dir/flags.make
+CMakeFiles/std_functions_realization.dir/service_funcs.cpp.o: ../service_funcs.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/std_functions_realization.dir/service_funcs.cpp.o"
+	/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/std_functions_realization.dir/service_funcs.cpp.o -c /home/maxim/CLionProjects/coding_tasks/std_functions_realization/service_funcs.cpp
+
+CMakeFiles/std_functions_realization.dir/service_funcs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/std_functions_realization.dir/service_funcs.cpp.i"
+	/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxim/CLionProjects/coding_tasks/std_functions_realization/service_funcs.cpp > CMakeFiles/std_functions_realization.dir/service_funcs.cpp.i
+
+CMakeFiles/std_functions_realization.dir/service_funcs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/std_functions_realization.dir/service_funcs.cpp.s"
+	/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxim/CLionProjects/coding_tasks/std_functions_realization/service_funcs.cpp -o CMakeFiles/std_functions_realization.dir/service_funcs.cpp.s
+
+CMakeFiles/std_functions_realization.dir/custom_funcs.cpp.o: CMakeFiles/std_functions_realization.dir/flags.make
+CMakeFiles/std_functions_realization.dir/custom_funcs.cpp.o: ../custom_funcs.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/std_functions_realization.dir/custom_funcs.cpp.o"
+	/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/std_functions_realization.dir/custom_funcs.cpp.o -c /home/maxim/CLionProjects/coding_tasks/std_functions_realization/custom_funcs.cpp
+
+CMakeFiles/std_functions_realization.dir/custom_funcs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/std_functions_realization.dir/custom_funcs.cpp.i"
+	/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxim/CLionProjects/coding_tasks/std_functions_realization/custom_funcs.cpp > CMakeFiles/std_functions_realization.dir/custom_funcs.cpp.i
+
+CMakeFiles/std_functions_realization.dir/custom_funcs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/std_functions_realization.dir/custom_funcs.cpp.s"
+	/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxim/CLionProjects/coding_tasks/std_functions_realization/custom_funcs.cpp -o CMakeFiles/std_functions_realization.dir/custom_funcs.cpp.s
+
 # Object files for target std_functions_realization
 std_functions_realization_OBJECTS = \
-"CMakeFiles/std_functions_realization.dir/main.cpp.o"
+"CMakeFiles/std_functions_realization.dir/main.cpp.o" \
+"CMakeFiles/std_functions_realization.dir/service_funcs.cpp.o" \
+"CMakeFiles/std_functions_realization.dir/custom_funcs.cpp.o"
 
 # External object files for target std_functions_realization
 std_functions_realization_EXTERNAL_OBJECTS =
 
 std_functions_realization: CMakeFiles/std_functions_realization.dir/main.cpp.o
+std_functions_realization: CMakeFiles/std_functions_realization.dir/service_funcs.cpp.o
+std_functions_realization: CMakeFiles/std_functions_realization.dir/custom_funcs.cpp.o
 std_functions_realization: CMakeFiles/std_functions_realization.dir/build.make
 std_functions_realization: CMakeFiles/std_functions_realization.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable std_functions_realization"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/maxim/CLionProjects/coding_tasks/std_functions_realization/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable std_functions_realization"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/std_functions_realization.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

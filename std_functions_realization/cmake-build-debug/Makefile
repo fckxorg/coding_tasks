@@ -123,6 +123,33 @@ std_functions_realization/fast:
 	$(MAKE) -f CMakeFiles/std_functions_realization.dir/build.make CMakeFiles/std_functions_realization.dir/build
 .PHONY : std_functions_realization/fast
 
+custom_funcs.o: custom_funcs.cpp.o
+
+.PHONY : custom_funcs.o
+
+# target to build an object file
+custom_funcs.cpp.o:
+	$(MAKE) -f CMakeFiles/std_functions_realization.dir/build.make CMakeFiles/std_functions_realization.dir/custom_funcs.cpp.o
+.PHONY : custom_funcs.cpp.o
+
+custom_funcs.i: custom_funcs.cpp.i
+
+.PHONY : custom_funcs.i
+
+# target to preprocess a source file
+custom_funcs.cpp.i:
+	$(MAKE) -f CMakeFiles/std_functions_realization.dir/build.make CMakeFiles/std_functions_realization.dir/custom_funcs.cpp.i
+.PHONY : custom_funcs.cpp.i
+
+custom_funcs.s: custom_funcs.cpp.s
+
+.PHONY : custom_funcs.s
+
+# target to generate assembly for a file
+custom_funcs.cpp.s:
+	$(MAKE) -f CMakeFiles/std_functions_realization.dir/build.make CMakeFiles/std_functions_realization.dir/custom_funcs.cpp.s
+.PHONY : custom_funcs.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -150,6 +177,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/std_functions_realization.dir/build.make CMakeFiles/std_functions_realization.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+service_funcs.o: service_funcs.cpp.o
+
+.PHONY : service_funcs.o
+
+# target to build an object file
+service_funcs.cpp.o:
+	$(MAKE) -f CMakeFiles/std_functions_realization.dir/build.make CMakeFiles/std_functions_realization.dir/service_funcs.cpp.o
+.PHONY : service_funcs.cpp.o
+
+service_funcs.i: service_funcs.cpp.i
+
+.PHONY : service_funcs.i
+
+# target to preprocess a source file
+service_funcs.cpp.i:
+	$(MAKE) -f CMakeFiles/std_functions_realization.dir/build.make CMakeFiles/std_functions_realization.dir/service_funcs.cpp.i
+.PHONY : service_funcs.cpp.i
+
+service_funcs.s: service_funcs.cpp.s
+
+.PHONY : service_funcs.s
+
+# target to generate assembly for a file
+service_funcs.cpp.s:
+	$(MAKE) -f CMakeFiles/std_functions_realization.dir/build.make CMakeFiles/std_functions_realization.dir/service_funcs.cpp.s
+.PHONY : service_funcs.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... std_functions_realization"
 	@echo "... edit_cache"
+	@echo "... custom_funcs.o"
+	@echo "... custom_funcs.i"
+	@echo "... custom_funcs.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... service_funcs.o"
+	@echo "... service_funcs.i"
+	@echo "... service_funcs.s"
 .PHONY : help
 
 

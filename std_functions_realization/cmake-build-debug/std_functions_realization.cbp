@@ -82,7 +82,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/maxim/CLionProjects/coding_tasks/std_functions_realization/custom_funcs.cpp">
+			<Option target="std_functions_realization"/>
+		</Unit>
+		<Unit filename="/home/maxim/CLionProjects/coding_tasks/std_functions_realization/custom_funcs.h">
+			<Option target="std_functions_realization"/>
+		</Unit>
 		<Unit filename="/home/maxim/CLionProjects/coding_tasks/std_functions_realization/main.cpp">
+			<Option target="std_functions_realization"/>
+		</Unit>
+		<Unit filename="/home/maxim/CLionProjects/coding_tasks/std_functions_realization/service_funcs.cpp">
+			<Option target="std_functions_realization"/>
+		</Unit>
+		<Unit filename="/home/maxim/CLionProjects/coding_tasks/std_functions_realization/service_funcs.h">
 			<Option target="std_functions_realization"/>
 		</Unit>
 		<Unit filename="/home/maxim/CLionProjects/coding_tasks/std_functions_realization/CMakeLists.txt">
