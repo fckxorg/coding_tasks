@@ -62,6 +62,11 @@ int getFileSize (char *filepath)
 
 int getNumberOfLines (char *file_data)
 {
+  /*! Use this function to get number of lines in buffer
+   * @param file_data pointer to buffer
+   * @return n_lines number of lines in buffer
+   * */
+
   assert(file_data);
 
   int n_lines = 0;
@@ -129,6 +134,11 @@ void getStringsStarts (char *file_data, int file_size, char **string_starts)
 
 int compareStrings (const void *first_string, const void *second_string)
 {
+  /*! Use this method to compare two strings
+   * @param first_string pointer to first buffer with string
+   * @param second_string pointer to second buffer with string
+   * @return negative value, zero or positive value, when first buffer is lower, equal or greater than second_buffer respective
+   * */
   assert(first_string);
   assert (second_string);
 

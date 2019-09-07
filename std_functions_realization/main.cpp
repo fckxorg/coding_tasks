@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "custom_funcs.h"
-// TODO add tests
+
 
 int main ()
 {

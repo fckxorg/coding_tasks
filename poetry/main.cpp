@@ -26,5 +26,8 @@ int main ()
 
   writeFile (filename, string_starts, n_lines);
 
+  free (file_data);
+  free (string_starts);
+
   return 0;
 }
