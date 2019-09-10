@@ -6,11 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/maxim/CLionProjects/coding_tasks/std_functions_realization/custom_funcs.h
-
-/home/maxim/CLionProjects/coding_tasks/std_functions_realization/main.cpp
+/home/maxim/CLionProjects/coding_tasks/std_functions_realization/custom_funcs.cpp
+assert.h
+-
 stdio.h
 -
 custom_funcs.h
 /home/maxim/CLionProjects/coding_tasks/std_functions_realization/custom_funcs.h
+service_funcs.h
+/home/maxim/CLionProjects/coding_tasks/std_functions_realization/service_funcs.h
+
+/home/maxim/CLionProjects/coding_tasks/std_functions_realization/custom_funcs.h
+
+/home/maxim/CLionProjects/coding_tasks/std_functions_realization/service_funcs.h
 

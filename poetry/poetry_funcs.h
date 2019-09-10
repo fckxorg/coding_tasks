@@ -14,3 +14,5 @@ int compareStrings (const void *first_string, const void *second_string);
 int readFile (char *filepath, int file_size, char *file_data);
 
 void sortStrings (char **string_starts, int n_lines);
+
+void sortStringsBackwards (char **string_starts, int n_lines);

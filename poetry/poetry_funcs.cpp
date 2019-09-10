@@ -7,7 +7,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
 int writeFile (char *filepath, char **strings_starts, int n_lines)
 {
   /*!Writes strings to file located in provided path
@@ -18,7 +17,7 @@ int writeFile (char *filepath, char **strings_starts, int n_lines)
   assert(filepath);
   assert(strings_starts);
 
-  FILE *file = fopen (filepath, "w");
+  FILE *file = fopen (filepath, "a");
 
   if (!file)
     {
@@ -150,12 +149,42 @@ int compareStrings (const void *first_string, const void *second_string)
       arg1++;
       arg2++;
     }
+
   int result = *arg1 - *arg2;
+
   if (result > 0)
     {
       return 1;
     }
-  if (result < 0)
+  else if (result < 0)
+    {
+      return -1;
+    }
+
+  return 0;
+}
+
+int compareStringsBackwards (const void *first_string, const void *second_string)
+{
+  assert(first_string);
+  assert (second_string);
+
+  char *arg1 = *((char **) first_string);
+  char *arg2 = *((char **) second_string);
+
+  while (arg1 == arg2 && *arg1)
+    {
+      arg1--;
+      arg2--;
+    }
+
+  int result = *arg1 - *arg2;
+
+  if (result > 0)
+    {
+      return 1;
+    }
+  else if (result < 0)
     {
       return -1;
     }
@@ -172,4 +201,11 @@ void sortStrings (char **string_starts, int n_lines)
   assert (string_starts);
 
   qsort (string_starts, n_lines, sizeof (char *), compareStrings);
+}
+
+void sortStringsBackwards (char **string_starts, int n_lines)
+{
+  assert (string_starts);
+
+  qsort (string_starts, n_lines, sizeof (char *), compareStringsBackwards);
 }

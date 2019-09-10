@@ -26,6 +26,10 @@ int main ()
 
   writeFile (filename, string_starts, n_lines);
 
+  sortStringsBackwards (string_starts, n_lines);
+
+  writeFile (filename, string_starts, n_lines);
+
   free (file_data);
   free (string_starts);
 

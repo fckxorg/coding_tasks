@@ -2,7 +2,7 @@
 // Created by maxim on 06.09.19.
 //
 
-int custom_puts (const char *str);
+int custom_puts (const char *str, FILE* filestream);
 
 char *custom_fgets (char *str, size_t amount, FILE *stream);
 
