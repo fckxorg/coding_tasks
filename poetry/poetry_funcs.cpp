@@ -9,6 +9,12 @@
 
 int writeFileFromBuffer (char *filepath, char *buffer, int file_size)
 {
+  /*!Writes string to file located in provided path
+   * @param filepath path to file location
+   * @param buffer buffer to write
+   * @param file_size length of file
+   * */
+
   assert(filepath);
   assert(buffer);
 
@@ -152,6 +158,11 @@ void getStringsBoundaries (char *file_data, int file_size, StringBoundaries *ind
 
 char upperCase (char letter)
 {
+  /*! Use this function to get uppercase letter. If letter already uppercase returns current letter
+   * @param letter letter to uppercase
+   * @return letter uppercase version of letter
+   * */
+
   if (letter > 'Z' && letter <= 'z')
     {
       letter -= 'a' - 'A';
@@ -166,6 +177,14 @@ char upperCase (char letter)
 
 char *getPreviousLetter (char *symbol)
 {
+  /*! Use this function to get previous letter in buffer. If current symbol is already letter, returns current symbol
+  * @param symbol ptr to current symbol in buffer
+  * @return symbol ptr to previous letter in buffer
+  * */
+
+
+  assert (symbol);
+
   while ((*symbol > 'z' || *symbol < 'A') && *symbol)
     {
       symbol--;
@@ -175,6 +194,13 @@ char *getPreviousLetter (char *symbol)
 
 char *getNextLetter (char *symbol)
 {
+  /*! Use this function to get next letter in buffer. If current symbol is already letter, returns current symbol
+   * @param symbol ptr to current symbol in buffer
+   * @return symbol ptr to next letter in buffer
+   * */
+
+  assert (symbol);
+
   while ((*symbol > 'z' || *symbol < 'A') && *symbol)
     {
       symbol++;
@@ -220,6 +246,12 @@ int compareStrings (const void *first_string, const void *second_string)
 
 int compareStringsBackwards (const void *first_string, const void *second_string)
 {
+  /*! Use this method to compare two strings from end to start
+  * @param first_string pointer to first buffer with string
+  * @param second_string pointer to second buffer with string
+  * @return negative value, zero or positive value, when first buffer is lower, equal or greater than second_buffer respective
+  * */
+
   assert(first_string);
   assert (second_string);
 
@@ -251,8 +283,8 @@ int compareStringsBackwards (const void *first_string, const void *second_string
 
 void sortStrings (StringBoundaries *index, int n_lines)
 {
-  /*!Sorts strings by pointers in array
-   * @param string_starts array of pointers to string starts
+  /*!Sorts strings by pointers in array of structs
+   * @param index array of structs with pointers to string starts
    * @param n_lines number of lines in file
    * */
   assert (index);
@@ -262,6 +294,11 @@ void sortStrings (StringBoundaries *index, int n_lines)
 
 void sortStringsBackwards (StringBoundaries *index, int n_lines)
 {
+  /*!Sorts strings from end to start by pointers in array of structs
+   * @param index array of structs with pointers to string starts
+   * @param n_lines number of lines in file
+   * */
+
   assert (index);
 
   qsort (index, n_lines, sizeof (StringBoundaries), compareStringsBackwards);
