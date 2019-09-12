@@ -29,6 +29,7 @@ int writeFile (char *filepath, StringBoundaries *index, int n_lines)
     {
       fprintf (file, "%s\n", index[i].start);
     }
+  fprintf (file, "\n");
   fclose (file);
   return 0;
 }
@@ -130,7 +131,40 @@ void getStringsBoundaries (char *file_data, int file_size, StringBoundaries *ind
           index[line].start = &file_data[i];
         }
     }
+  file_data[file_size - 1] = '\0';
   index[line].end = &file_data[file_size - 2];
+}
+
+char upperCase (char letter)
+{
+  if (letter > 'Z' && letter <= 'z')
+    {
+      letter -= 'a' - 'A';
+      return letter;
+    }
+  if (letter > 'A' && letter < 'Z')
+    {
+      return letter;
+    }
+  return 0;
+}
+
+char *getPreviousLetter (char *symbol)
+{
+  while ((*symbol > 'z' || *symbol < 'A') && *symbol)
+    {
+      symbol--;
+    }
+  return symbol;
+}
+
+char *getNextLetter (char *symbol)
+{
+  while ((*symbol > 'z' || *symbol < 'A') && *symbol)
+    {
+      symbol++;
+    }
+  return symbol;
 }
 
 int compareStrings (const void *first_string, const void *second_string)
@@ -146,26 +180,13 @@ int compareStrings (const void *first_string, const void *second_string)
   char *arg1 = (*((StringBoundaries *) first_string)).start;
   char *arg2 = (*((StringBoundaries *) second_string)).start;
 
-  if (*arg1 > 122 || *arg1 < 65)
-    {
-      arg1++;
-    }
-
-  if (*arg2 > 122 || *arg2 < 65)
-    {
-      arg2++;
-    }
+  getNextLetter (arg1);
+  getNextLetter (arg2);
 
   while (arg1 == arg2 && *arg1)
     {
-      while (*arg1 > 122 || *arg1 < 65)
-        {
-          arg1++;
-        }
-      while (*arg2 > 122 || *arg2 < 65)
-        {
-          arg2++;
-        }
+      getNextLetter (arg1);
+      getNextLetter (arg2);
     }
 
   int result = *arg1 - *arg2;
@@ -190,29 +211,16 @@ int compareStringsBackwards (const void *first_string, const void *second_string
   char *arg1 = (*((StringBoundaries *) first_string)).end;
   char *arg2 = (*((StringBoundaries *) second_string)).end;
 
-  if (*arg1 > 122 || *arg1 < 65)
-    {
-      arg1--;
-    }
-
-  if (*arg2 > 122 || *arg2 < 65)
-    {
-      arg2--;
-    }
+  arg1 = getPreviousLetter (arg1);
+  arg2 = getPreviousLetter (arg2);
 
   while (arg1 == arg2 && *arg1)
     {
-      while (*arg1 > 122 || *arg1 < 65)
-        {
-          arg1--;
-        }
-      while (*arg2 > 122 || *arg2 < 65)
-        {
-          arg2--;
-        }
+      getPreviousLetter (arg1);
+      getPreviousLetter (arg2);
     }
 
-  int result = *arg1 - *arg2;
+  int result = upperCase (*arg1) - upperCase (*arg2);
 
   if (result > 0)
     {
