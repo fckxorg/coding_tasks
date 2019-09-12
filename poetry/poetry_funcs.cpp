@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int writeFile (char *filepath, char **strings_starts, int n_lines)
+int writeFile (char *filepath, StringBoundaries *index, int n_lines)
 {
   /*!Writes strings to file located in provided path
    * @param filepath path to file location
@@ -15,7 +15,7 @@ int writeFile (char *filepath, char **strings_starts, int n_lines)
    * @param n_lines number of lines in file
    * */
   assert(filepath);
-  assert(strings_starts);
+  assert(index);
 
   FILE *file = fopen (filepath, "a");
 
@@ -27,7 +27,7 @@ int writeFile (char *filepath, char **strings_starts, int n_lines)
 
   for (int i = 0; i < n_lines; i++)
     {
-      fprintf (file, "%s\n", strings_starts[i]);
+      fprintf (file, "%s\n", index[i].start);
     }
   fclose (file);
   return 0;
@@ -107,7 +107,7 @@ int readFile (char *filepath, int file_size, char *file_data)
   return 0;
 }
 
-void getStringsStarts (char *file_data, int file_size, char **string_starts)
+void getStringsBoundaries (char *file_data, int file_size, StringBoundaries *index)
 {
   /*!Writes list of pointers to string starts
    * @param file_data array with file_data
@@ -115,20 +115,22 @@ void getStringsStarts (char *file_data, int file_size, char **string_starts)
    * @param string_starts array for pointers storing
    * */
   assert (file_data);
-  assert (string_starts);
+  assert (index);
 
   int line = 0;
 
-  string_starts[line] = file_data;
+  index[line].start = file_data;
   for (int i = 1; i < file_size; i++)
     {
       if (file_data[i - 1] == '\n')
         {
           file_data[i - 1] = '\0';
+          index[line].end = &file_data[i - 2];
           line++;
-          string_starts[line] = &file_data[i];
+          index[line].start = &file_data[i];
         }
     }
+  index[line].end = &file_data[file_size - 2];
 }
 
 int compareStrings (const void *first_string, const void *second_string)
@@ -141,8 +143,8 @@ int compareStrings (const void *first_string, const void *second_string)
   assert(first_string);
   assert (second_string);
 
-  char *arg1 = *((char **) first_string);
-  char *arg2 = *((char **) second_string);
+  char *arg1 = (*((StringBoundaries *) first_string)).start;
+  char *arg2 = (*((StringBoundaries *) second_string)).start;
 
   while (arg1 == arg2 && *arg1)
     {
@@ -169,8 +171,8 @@ int compareStringsBackwards (const void *first_string, const void *second_string
   assert(first_string);
   assert (second_string);
 
-  char *arg1 = *((char **) first_string);
-  char *arg2 = *((char **) second_string);
+  char *arg1 = (*((StringBoundaries *) first_string)).end;
+  char *arg2 = (*((StringBoundaries *) second_string)).end;
 
   while (arg1 == arg2 && *arg1)
     {
@@ -192,20 +194,20 @@ int compareStringsBackwards (const void *first_string, const void *second_string
   return 0;
 }
 
-void sortStrings (char **string_starts, int n_lines)
+void sortStrings (StringBoundaries *index, int n_lines)
 {
   /*!Sorts strings by pointers in array
    * @param string_starts array of pointers to string starts
    * @param n_lines number of lines in file
    * */
-  assert (string_starts);
+  assert (index);
 
-  qsort (string_starts, n_lines, sizeof (char *), compareStrings);
+  qsort (index, n_lines, sizeof (StringBoundaries), compareStrings);
 }
 
-void sortStringsBackwards (char **string_starts, int n_lines)
+void sortStringsBackwards (StringBoundaries *index, int n_lines)
 {
-  assert (string_starts);
+  assert (index);
 
-  qsort (string_starts, n_lines, sizeof (char *), compareStringsBackwards);
+  qsort (index, n_lines, sizeof (StringBoundaries), compareStringsBackwards);
 }

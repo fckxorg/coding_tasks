@@ -17,21 +17,21 @@ int main ()
 
   int n_lines = getNumberOfLines (file_data);
 
-  char **string_starts = (char **) calloc (n_lines, sizeof (char *));
-  getStringsStarts (file_data, file_size, string_starts);
-  sortStrings (string_starts, n_lines);
+  auto *index = (StringBoundaries *) calloc (n_lines, sizeof (StringBoundaries));
+  getStringsBoundaries (file_data, file_size, index);
+  sortStrings (index, n_lines);
 
   printf ("Provide filepath for storing sorted data: ");
   scanf ("%s", filename);
 
-  writeFile (filename, string_starts, n_lines);
+  writeFile (filename, index, n_lines);
 
-  sortStringsBackwards (string_starts, n_lines);
+  sortStringsBackwards (index, n_lines);
 
-  writeFile (filename, string_starts, n_lines);
+  writeFile (filename, index, n_lines);
 
   free (file_data);
-  free (string_starts);
+  free (index);
 
   return 0;
 }

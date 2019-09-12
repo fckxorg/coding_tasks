@@ -114,8 +114,7 @@ char *custom_itoa (int number, char *buffer, int base)
   curr++;
   *curr = '\0';
 
-  reverse (buffer); 
-
+  reverse (buffer);
   return buffer;
 }
 
