@@ -146,10 +146,26 @@ int compareStrings (const void *first_string, const void *second_string)
   char *arg1 = (*((StringBoundaries *) first_string)).start;
   char *arg2 = (*((StringBoundaries *) second_string)).start;
 
-  while (arg1 == arg2 && *arg1)
+  if (*arg1 > 122 || *arg1 < 65)
     {
       arg1++;
+    }
+
+  if (*arg2 > 122 || *arg2 < 65)
+    {
       arg2++;
+    }
+
+  while (arg1 == arg2 && *arg1)
+    {
+      while (*arg1 > 122 || *arg1 < 65)
+        {
+          arg1++;
+        }
+      while (*arg2 > 122 || *arg2 < 65)
+        {
+          arg2++;
+        }
     }
 
   int result = *arg1 - *arg2;
@@ -174,10 +190,26 @@ int compareStringsBackwards (const void *first_string, const void *second_string
   char *arg1 = (*((StringBoundaries *) first_string)).end;
   char *arg2 = (*((StringBoundaries *) second_string)).end;
 
-  while (arg1 == arg2 && *arg1)
+  if (*arg1 > 122 || *arg1 < 65)
     {
       arg1--;
+    }
+
+  if (*arg2 > 122 || *arg2 < 65)
+    {
       arg2--;
+    }
+
+  while (arg1 == arg2 && *arg1)
+    {
+      while (*arg1 > 122 || *arg1 < 65)
+        {
+          arg1--;
+        }
+      while (*arg2 > 122 || *arg2 < 65)
+        {
+          arg2--;
+        }
     }
 
   int result = *arg1 - *arg2;
