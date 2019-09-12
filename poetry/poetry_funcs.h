@@ -6,7 +6,9 @@ struct StringBoundaries {
     char *end;
 };
 
-int writeFile (char *filepath, StringBoundaries *index, int n_lines);
+int writeFileFromBuffer (char *filepath, char *buffer, int file_size);
+
+int writeFileFromIndex (char *filepath, StringBoundaries *index, int n_lines);
 
 int getFileSize (char *filepath);
 

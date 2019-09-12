@@ -7,7 +7,22 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int writeFile (char *filepath, StringBoundaries *index, int n_lines)
+int writeFileFromBuffer (char *filepath, char *buffer, int file_size)
+{
+  assert(filepath);
+  assert(buffer);
+
+  FILE *file = fopen (filepath, "a");
+
+  if (!file)
+    {
+      perror ("Failed to open file");
+      return 1;
+    }
+  fwrite (buffer, sizeof (char), file_size, file);
+}
+
+int writeFileFromIndex (char *filepath, StringBoundaries *index, int n_lines)
 {
   /*!Writes strings to file located in provided path
    * @param filepath path to file location
