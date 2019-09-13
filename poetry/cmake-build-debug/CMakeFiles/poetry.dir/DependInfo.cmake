@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/maxim/CLionProjects/coding_tasks/poetry/main.cpp" "/home/maxim/CLionProjects/coding_tasks/poetry/cmake-build-debug/CMakeFiles/poetry.dir/main.cpp.o"
   "/home/maxim/CLionProjects/coding_tasks/poetry/poetry_funcs.cpp" "/home/maxim/CLionProjects/coding_tasks/poetry/cmake-build-debug/CMakeFiles/poetry.dir/poetry_funcs.cpp.o"
+  "/home/maxim/CLionProjects/coding_tasks/poetry/tests.cpp" "/home/maxim/CLionProjects/coding_tasks/poetry/cmake-build-debug/CMakeFiles/poetry.dir/tests.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

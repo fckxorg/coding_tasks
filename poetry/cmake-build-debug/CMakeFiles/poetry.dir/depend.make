@@ -3,7 +3,12 @@
 
 CMakeFiles/poetry.dir/main.cpp.o: ../main.cpp
 CMakeFiles/poetry.dir/main.cpp.o: ../poetry_funcs.h
+CMakeFiles/poetry.dir/main.cpp.o: ../tests.h
 
 CMakeFiles/poetry.dir/poetry_funcs.cpp.o: ../poetry_funcs.cpp
 CMakeFiles/poetry.dir/poetry_funcs.cpp.o: ../poetry_funcs.h
+
+CMakeFiles/poetry.dir/tests.cpp.o: ../poetry_funcs.h
+CMakeFiles/poetry.dir/tests.cpp.o: ../tests.cpp
+CMakeFiles/poetry.dir/tests.cpp.o: ../tests.h
 

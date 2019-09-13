@@ -177,6 +177,33 @@ poetry_funcs.cpp.s:
 	$(MAKE) -f CMakeFiles/poetry.dir/build.make CMakeFiles/poetry.dir/poetry_funcs.cpp.s
 .PHONY : poetry_funcs.cpp.s
 
+tests.o: tests.cpp.o
+
+.PHONY : tests.o
+
+# target to build an object file
+tests.cpp.o:
+	$(MAKE) -f CMakeFiles/poetry.dir/build.make CMakeFiles/poetry.dir/tests.cpp.o
+.PHONY : tests.cpp.o
+
+tests.i: tests.cpp.i
+
+.PHONY : tests.i
+
+# target to preprocess a source file
+tests.cpp.i:
+	$(MAKE) -f CMakeFiles/poetry.dir/build.make CMakeFiles/poetry.dir/tests.cpp.i
+.PHONY : tests.cpp.i
+
+tests.s: tests.cpp.s
+
+.PHONY : tests.s
+
+# target to generate assembly for a file
+tests.cpp.s:
+	$(MAKE) -f CMakeFiles/poetry.dir/build.make CMakeFiles/poetry.dir/tests.cpp.s
+.PHONY : tests.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +219,9 @@ help:
 	@echo "... poetry_funcs.o"
 	@echo "... poetry_funcs.i"
 	@echo "... poetry_funcs.s"
+	@echo "... tests.o"
+	@echo "... tests.i"
+	@echo "... tests.s"
 .PHONY : help
 
 

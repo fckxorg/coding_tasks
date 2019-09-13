@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+
 int writeFileFromBuffer (char *filepath, char *buffer, int file_size)
 {
   /*!Writes string to file located in provided path
@@ -168,7 +169,7 @@ char upperCase (char letter)
       letter -= 'a' - 'A';
       return letter;
     }
-  if (letter > 'A' && letter < 'Z')
+  if (letter >= 'A' && letter <= 'Z')
     {
       return letter;
     }
@@ -185,6 +186,8 @@ char *getPreviousLetter (char *symbol)
 
   assert (symbol);
 
+  symbol--;
+
   while ((*symbol > 'z' || *symbol < 'A') && *symbol)
     {
       symbol--;
@@ -200,6 +203,8 @@ char *getNextLetter (char *symbol)
    * */
 
   assert (symbol);
+
+  symbol++;
 
   while ((*symbol > 'z' || *symbol < 'A') && *symbol)
     {
@@ -221,13 +226,19 @@ int compareStrings (const void *first_string, const void *second_string)
   char *arg1 = (*((StringBoundaries *) first_string)).start;
   char *arg2 = (*((StringBoundaries *) second_string)).start;
 
-  getNextLetter (arg1);
-  getNextLetter (arg2);
-
-  while (arg1 == arg2 && *arg1)
+  if (*arg1 < 'A' || *arg1 > 'z')
     {
-      getNextLetter (arg1);
-      getNextLetter (arg2);
+      arg1 = getNextLetter (arg1);
+    }
+  if (*arg2 < 'A' || *arg2 > 'z')
+    {
+      arg2 = getNextLetter (arg2);
+    }
+
+  while (*arg1 == *arg2 && *arg1)
+    {
+      arg1 = getNextLetter (arg1);
+      arg2 = getNextLetter (arg2);
     }
 
   int result = *arg1 - *arg2;
@@ -258,13 +269,23 @@ int compareStringsBackwards (const void *first_string, const void *second_string
   char *arg1 = (*((StringBoundaries *) first_string)).end;
   char *arg2 = (*((StringBoundaries *) second_string)).end;
 
-  arg1 = getPreviousLetter (arg1);
-  arg2 = getPreviousLetter (arg2);
+  assert (arg1);
+  assert (arg2);
 
-  while (arg1 == arg2 && *arg1)
+  if (*arg1 < 'A' || *arg1 > 'z')
     {
-      getPreviousLetter (arg1);
-      getPreviousLetter (arg2);
+      arg1 = getPreviousLetter (arg1);
+    }
+
+  if (*arg2 < 'A' || *arg2 > 'z')
+    {
+      arg2 = getPreviousLetter (arg2);
+    }
+
+  while (*arg1 == *arg2 && *arg1)
+    {
+      arg1 = getPreviousLetter (arg1);
+      arg2 = getPreviousLetter (arg2);
     }
 
   int result = upperCase (*arg1) - upperCase (*arg2);

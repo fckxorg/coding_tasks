@@ -2,9 +2,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include "poetry_funcs.h"
+#include "tests.h"
+
 
 int main ()
 {
+  testGettingFileSize ();
+  testGettingNumberOfLines ();
+  testUpperCase ();
+  testComparingStrings ();
+  testComparingStringsFromEnd ();
+
   printf ("Provide filepath to file you want to sort strings in: ");
 
   const int MAX_FILENAME_LENGTH = 500;

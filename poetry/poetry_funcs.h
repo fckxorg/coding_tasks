@@ -18,9 +18,13 @@ void getStringsBoundaries (char *file_data, int file_size, StringBoundaries *ind
 
 int compareStrings (const void *first_string, const void *second_string);
 
+int compareStringsBackwards (const void *first_string, const void *second_string);
+
 int readFile (char *filepath, int file_size, char *file_data);
 
 void sortStrings (StringBoundaries *index, int n_lines);
 
 void sortStringsBackwards (StringBoundaries *index, int n_lines);
+
+char upperCase (char letter);
 
