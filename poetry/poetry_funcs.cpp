@@ -140,6 +140,7 @@ void getStringsBoundaries (char *file_data, int file_size, StringBoundaries *ind
   assert (index);
 
   (*index).start = file_data;
+
   for (int i = 1; i < file_size; i++)
     {
       if (file_data[i - 1] == '\n')
