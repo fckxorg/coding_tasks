@@ -141,19 +141,20 @@ void getStringsBoundaries (char *file_data, int file_size, StringBoundaries *ind
 
   int line = 0;
 
-  index[line].start = file_data;
+  (*index).start = file_data;
   for (int i = 1; i < file_size; i++)
     {
       if (file_data[i - 1] == '\n')
         {
           file_data[i - 1] = '\0';
-          index[line].end = &file_data[i - 2];
-          line++;
-          index[line].start = &file_data[i];
+          (*index).end = &file_data[i - 2];
+          index++;
+          (*index).start = &file_data[i];
         }
     }
+
   file_data[file_size - 1] = '\0';
-  index[line].end = &file_data[file_size - 2];
+  (*index).end = &file_data[file_size - 2];
 }
 
 char upperCase (char letter)
