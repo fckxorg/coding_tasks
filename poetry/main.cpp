@@ -4,7 +4,6 @@
 #include "poetry_funcs.h"
 #include "tests.h"
 
-
 int main ()
 {
   testGettingFileSize ();
@@ -32,7 +31,6 @@ int main ()
 
   auto *index = (StringBoundaries *) calloc (n_lines, sizeof (StringBoundaries));
   auto *index_copy = (StringBoundaries *) calloc (n_lines, sizeof (StringBoundaries));
-
 
   getStringsBoundaries (file_data, file_size, index);
   sortStrings (index, n_lines);

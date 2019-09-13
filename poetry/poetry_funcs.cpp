@@ -178,7 +178,7 @@ char upperCase (char letter)
 
 char *getPreviousLetter (char *symbol)
 {
-  /*! Use this function to get previous letter in buffer. If current symbol is already letter, returns current symbol
+  /*! Use this function to get previous letter in buffer.
   * @param symbol ptr to current symbol in buffer
   * @return symbol ptr to previous letter in buffer
   * */
@@ -197,7 +197,7 @@ char *getPreviousLetter (char *symbol)
 
 char *getNextLetter (char *symbol)
 {
-  /*! Use this function to get next letter in buffer. If current symbol is already letter, returns current symbol
+  /*! Use this function to get next letter in buffer.
    * @param symbol ptr to current symbol in buffer
    * @return symbol ptr to next letter in buffer
    * */
@@ -225,6 +225,9 @@ int compareStrings (const void *first_string, const void *second_string)
 
   char *arg1 = (*((StringBoundaries *) first_string)).start;
   char *arg2 = (*((StringBoundaries *) second_string)).start;
+
+  assert (arg1);
+  assert (arg2);
 
   if (*arg1 < 'A' || *arg1 > 'z')
     {
