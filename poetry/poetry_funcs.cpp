@@ -26,6 +26,8 @@ int writeFileFromBuffer (char *filepath, char *buffer, int file_size)
       return 1;
     }
   fwrite (buffer, sizeof (char), file_size, file);
+
+  return 0;
 }
 
 int writeFileFromIndex (char *filepath, StringBoundaries *index, int n_lines)
@@ -52,6 +54,7 @@ int writeFileFromIndex (char *filepath, StringBoundaries *index, int n_lines)
     }
   fprintf (file, "\n");
   fclose (file);
+
   return 0;
 }
 
@@ -175,6 +178,25 @@ char upperCase (char letter)
   return 0;
 }
 
+char *checkLetter (char *symbol, char *gatherer (char *letter))
+{
+  /*!Checks if symbol is letter.
+   * If it is not, returns ptr to new symbol, got by provided gatherer.
+   * @param symbol ptr to symbol for checking
+   * @param gatherer function for getting new letter
+   * @return symbol next letter, or provided symbol if it is already letter
+   * */
+
+  assert (symbol);
+  assert (gatherer);
+
+  if (*symbol < 'A' || *symbol > 'z')
+    {
+      symbol = gatherer (symbol);
+    }
+  return symbol;
+}
+
 char *getPreviousLetter (char *symbol)
 {
   /*! Use this function to get previous letter in buffer.
@@ -190,6 +212,7 @@ char *getPreviousLetter (char *symbol)
       symbol--;
     }
   while ((*symbol > 'z' || *symbol < 'A') && *symbol);
+
   return symbol;
 }
 
@@ -207,6 +230,7 @@ char *getNextLetter (char *symbol)
       symbol++;
     }
   while ((*symbol > 'z' || *symbol < 'A') && *symbol);
+
   return symbol;
 }
 
@@ -226,14 +250,8 @@ int compareStrings (const void *first_string, const void *second_string)
   assert (arg1);
   assert (arg2);
 
-  if (*arg1 < 'A' || *arg1 > 'z')
-    {
-      arg1 = getNextLetter (arg1);
-    }
-  if (*arg2 < 'A' || *arg2 > 'z')
-    {
-      arg2 = getNextLetter (arg2);
-    }
+  arg1 = checkLetter (arg1, getNextLetter);
+  arg2 = checkLetter (arg2, getNextLetter);
 
   while (*arg1 == *arg2 && *arg1)
     {
@@ -272,15 +290,8 @@ int compareStringsBackwards (const void *first_string, const void *second_string
   assert (arg1);
   assert (arg2);
 
-  if (*arg1 < 'A' || *arg1 > 'z')
-    {
-      arg1 = getPreviousLetter (arg1);
-    }
-
-  if (*arg2 < 'A' || *arg2 > 'z')
-    {
-      arg2 = getPreviousLetter (arg2);
-    }
+  checkLetter (arg1, getPreviousLetter);
+  checkLetter (arg2, getPreviousLetter);
 
   while (*arg1 == *arg2 && *arg1)
     {
