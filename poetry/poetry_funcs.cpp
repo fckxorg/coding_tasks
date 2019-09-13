@@ -7,7 +7,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
 int writeFileFromBuffer (char *filepath, char *buffer, int file_size)
 {
   /*!Writes string to file located in provided path
@@ -186,12 +185,11 @@ char *getPreviousLetter (char *symbol)
 
   assert (symbol);
 
-  symbol--;
-
-  while ((*symbol > 'z' || *symbol < 'A') && *symbol)
+  do
     {
       symbol--;
     }
+  while ((*symbol > 'z' || *symbol < 'A') && *symbol);
   return symbol;
 }
 
@@ -204,12 +202,11 @@ char *getNextLetter (char *symbol)
 
   assert (symbol);
 
-  symbol++;
-
-  while ((*symbol > 'z' || *symbol < 'A') && *symbol)
+  do
     {
       symbol++;
     }
+  while ((*symbol > 'z' || *symbol < 'A') && *symbol);
   return symbol;
 }
 
@@ -250,7 +247,7 @@ int compareStrings (const void *first_string, const void *second_string)
     {
       return 1;
     }
-  else if (result < 0)
+  if (result < 0)
     {
       return -1;
     }
@@ -297,7 +294,7 @@ int compareStringsBackwards (const void *first_string, const void *second_string
     {
       return 1;
     }
-  else if (result < 0)
+  if (result < 0)
     {
       return -1;
     }
