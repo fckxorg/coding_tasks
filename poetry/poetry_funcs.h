@@ -34,7 +34,5 @@ void sortStrings (StringBoundaries *index, int n_lines);
 
 void sortStringsBackwards (StringBoundaries *index, int n_lines);
 
-char upperCase (char letter);
-
 File loadFile (char *filename);
 

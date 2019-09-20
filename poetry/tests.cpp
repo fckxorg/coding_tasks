@@ -43,28 +43,6 @@ int testGettingNumberOfLines ()
   return 1;
 }
 
-int testUpperCase ()
-{
-  char evaluated_low = 0, evaluated_high = 0;
-
-  char high_letter = 'A', low_letter = 'a';
-
-  evaluated_low = upperCase (low_letter);
-  evaluated_high = upperCase (high_letter);
-
-  if (evaluated_low == high_letter)
-    {
-      if (evaluated_high == high_letter)
-        {
-          printf ("upperCase test passed\n");
-          return 0;
-        }
-      printf ("upperCase test failed! Expected 'A', got '%c'\n", evaluated_high);
-      return 1;
-    }
-  printf ("upperCase test failed! Expected 'A', got '%c'\n", evaluated_low);
-  return 1;
-}
 
 int testComparingStrings ()
 {
@@ -101,11 +79,23 @@ int testComparingStringsFromEnd ()
 
   int evaluated = compareStringsBackwards ((const void *) (&str1_bounds), (const void *) (&str2_bounds));
 
-  if (evaluated == -1)
+  if (evaluated < 0)
     {
       printf ("compareStringsFromEnd test passed\n");
       return 0;
     }
   printf ("compareStringsFromEnd test failed! Expected '-1', got '%d'\n", evaluated);
   return 1;
+}
+
+int testFuncs ()
+{
+  int tests_failed = 0;
+
+  tests_failed += testGettingFileSize ();
+  tests_failed += testComparingStringsFromEnd ();
+  tests_failed += testComparingStrings ();
+  tests_failed += testGettingNumberOfLines ();
+
+  return tests_failed;
 }

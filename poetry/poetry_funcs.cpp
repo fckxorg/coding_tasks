@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int writeFileFromBuffer (char *filepath, char *buffer, int file_size)
 {
@@ -160,24 +161,6 @@ void getStringsBoundaries (char *file_data, int file_size, StringBoundaries *ind
   (*index).end = &file_data[file_size - 2];
 }
 
-char upperCase (char letter)
-{
-  /*! Use this function to get uppercase letter. If letter already uppercase returns current letter
-   * @param letter letter to uppercase
-   * @return letter uppercase version of letter
-   * */
-
-  if (letter > 'Z' && letter <= 'z')
-    {
-      letter -= 'a' - 'A';
-      return letter;
-    }
-  if (letter >= 'A' && letter <= 'Z')
-    {
-      return letter;
-    }
-  return 0;
-}
 
 char *checkLetter (char *symbol, char *gatherer (char *letter))
 {
@@ -191,7 +174,7 @@ char *checkLetter (char *symbol, char *gatherer (char *letter))
   assert (symbol);
   assert (gatherer);
 
-  if (*symbol < 'A' || *symbol > 'z')
+  if (!isalpha (*symbol))
     {
       symbol = gatherer (symbol);
     }
@@ -205,14 +188,13 @@ char *getPreviousLetter (char *symbol)
   * @return symbol ptr to previous letter in buffer
   * */
 
-
   assert (symbol);
 
   do
     {
       symbol--;
     }
-  while ((*symbol > 'z' || *symbol < 'A') && *symbol);
+  while (!isalpha (*symbol) && *symbol);
 
   return symbol;
 }
@@ -230,7 +212,7 @@ char *getNextLetter (char *symbol)
     {
       symbol++;
     }
-  while ((*symbol > 'z' || *symbol < 'A') && *symbol);
+  while (!isalpha (*symbol) && *symbol);
 
   return symbol;
 }
@@ -260,18 +242,9 @@ int compareStrings (const void *first_string, const void *second_string)
       arg2 = getNextLetter (arg2);
     }
 
-  int result = *arg1 - *arg2;
+  int result = toupper (*arg1) - toupper (*arg2);
 
-  if (result > 0)
-    {
-      return 1;
-    }
-  if (result < 0)
-    {
-      return -1;
-    }
-
-  return 0;
+  return result;
 }
 
 int compareStringsBackwards (const void *first_string, const void *second_string)
@@ -300,18 +273,9 @@ int compareStringsBackwards (const void *first_string, const void *second_string
       arg2 = getPreviousLetter (arg2);
     }
 
-  int result = upperCase (*arg1) - upperCase (*arg2);
+  int result = toupper (*arg1) - toupper (*arg2);
 
-  if (result > 0)
-    {
-      return 1;
-    }
-  if (result < 0)
-    {
-      return -1;
-    }
-
-  return 0;
+  return result;
 }
 
 void sortStrings (StringBoundaries *index, int n_lines)
@@ -339,6 +303,12 @@ void sortStringsBackwards (StringBoundaries *index, int n_lines)
 
 File loadFile (char *filename)
 {
+  /*! This function creates structure for file, containing file_size, number of lines,
+   * index of structures with strings boundaries, processed file data buffer and raw data buffer
+   * @param filename pointer to char pointer with filename
+   * @return loaded_file Structure with information about file
+   * */
+
   File loaded_file;
   loaded_file.size = getFileSize (filename);
   loaded_file.data = (char *) calloc (loaded_file.size + 1, sizeof (char));

@@ -1,6 +1,3 @@
-#define MEOW 1 // MUST be 1 ALWAYS for cats power -- bjarne
-
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "poetry_funcs.h"
@@ -8,15 +5,13 @@
 
 int main (int argc, char *const argv[])
 {
-  char *filename = "/home/maxim/poetry.txt";
-  char *output_name = "/home/maxim/out.txt";
+  char *filename = "/home/maxim/input.txt";
+  char *output_name = "/home/maxim/output.txt";
+
   if (argc == 2 && strcmp (argv[1], "--test") == 0)
     {
-      testGettingFileSize ();
-      testGettingNumberOfLines ();
-      testUpperCase ();
-      testComparingStrings ();
-      testComparingStringsFromEnd ();
+      testFuncs ();
+      return 0;
     }
   if (argc == 5)
     {

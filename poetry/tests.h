@@ -4,6 +4,6 @@
 
 int testGettingFileSize ();
 int testGettingNumberOfLines ();
-int testUpperCase ();
 int testComparingStrings ();
 int testComparingStringsFromEnd ();
+int testFuncs ();
