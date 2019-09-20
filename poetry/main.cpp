@@ -5,8 +5,8 @@
 
 int main (int argc, char *const argv[])
 {
-  char *filename = "/home/maxim/input.txt";
-  char *output_name = "/home/maxim/output.txt";
+  char *filename = "input.txt";
+  char *output_name = "output.txt";
 
   if (argc == 2 && strcmp (argv[1], "--test") == 0)
     {
