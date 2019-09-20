@@ -6,6 +6,14 @@ struct StringBoundaries {
     char *end;
 };
 
+struct File {
+    StringBoundaries *index;
+    int n_lines;
+    int size;
+    char *data;
+    char *raw_data;
+};
+
 int writeFileFromBuffer (char *filepath, char *buffer, int file_size);
 
 int writeFileFromIndex (char *filepath, StringBoundaries *index, int n_lines);
@@ -28,5 +36,5 @@ void sortStringsBackwards (StringBoundaries *index, int n_lines);
 
 char upperCase (char letter);
 
-int loadFile (char *filename, char *file_data, char *file_data_copy, StringBoundaries *index, int *file_size);
+File loadFile (char *filename);
 

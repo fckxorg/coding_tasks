@@ -8,8 +8,8 @@
 
 int main (int argc, char *const argv[])
 {
-  char *filename;
-  char *output_name;
+  char *filename = "/home/maxim/poetry.txt";
+  char *output_name = "/home/maxim/out.txt";
   if (argc == 2 && strcmp (argv[1], "--test") == 0)
     {
       testGettingFileSize ();
@@ -30,36 +30,20 @@ int main (int argc, char *const argv[])
         }
     }
 
-#if MEOW
+  File file = loadFile (filename);
 
-  int file_size = getFileSize (filename);
-  char *file_data = (char *) calloc (file_size + 1, sizeof (char));
-  char *file_data_copy = (char *) calloc (file_size + 1, sizeof (char));
+  sortStrings (file.index, file.n_lines);
 
-  readFile (filename, file_size, file_data);
+  writeFileFromIndex (output_name, file.index, file.n_lines);
 
-  memcpy (file_data_copy, file_data, file_size * sizeof (char));
+  sortStringsBackwards (file.index, file.n_lines);
 
-  int n_lines = getNumberOfLines (file_data);
+  writeFileFromIndex (output_name, file.index, file.n_lines);
+  writeFileFromBuffer (output_name, file.raw_data, file.size);
 
-  auto *index = (StringBoundaries *) calloc (n_lines, sizeof (StringBoundaries));
-
-  getStringsBoundaries (file_data, file_size, index);
-
-#endif
-
-  sortStrings (index, n_lines);
-
-  writeFileFromIndex (output_name, index, n_lines);
-
-  sortStringsBackwards (index, n_lines);
-
-  writeFileFromIndex (output_name, index, n_lines);
-  writeFileFromBuffer (output_name, file_data_copy, file_size);
-
-  free (file_data);
-  free (file_data_copy);
-  free (index);
+  free (file.data);
+  free (file.raw_data);
+  free (file.index);
 
   return 0;
 }

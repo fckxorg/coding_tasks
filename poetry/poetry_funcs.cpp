@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 int writeFileFromBuffer (char *filepath, char *buffer, int file_size)
 {
@@ -334,4 +335,23 @@ void sortStringsBackwards (StringBoundaries *index, int n_lines)
   assert (index);
 
   qsort (index, n_lines, sizeof (StringBoundaries), compareStringsBackwards);
+}
+
+File loadFile (char *filename)
+{
+  File loaded_file;
+  loaded_file.size = getFileSize (filename);
+  loaded_file.data = (char *) calloc (loaded_file.size + 1, sizeof (char));
+  loaded_file.raw_data = (char *) calloc (loaded_file.size + 1, sizeof (char));
+
+  readFile (filename, loaded_file.size, loaded_file.data);
+  memcpy (loaded_file.raw_data, loaded_file.data, loaded_file.size * sizeof (char));
+
+  loaded_file.n_lines = getNumberOfLines (loaded_file.data);
+
+  loaded_file.index = (StringBoundaries *) calloc (loaded_file.n_lines, sizeof (StringBoundaries));
+
+  getStringsBoundaries (loaded_file.data, loaded_file.size, loaded_file.index);
+
+  return loaded_file;
 }
