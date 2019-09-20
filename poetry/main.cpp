@@ -1,22 +1,36 @@
+#define MEOW 1 // MUST be 1 ALWAYS for cats power -- bjarne
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "poetry_funcs.h"
 #include "tests.h"
 
-int main ()
+int main (int argc, char *const argv[])
 {
-  testGettingFileSize ();
-  testGettingNumberOfLines ();
-  testUpperCase ();
-  testComparingStrings ();
-  testComparingStringsFromEnd ();
+  char *filename;
+  char *output_name;
+  if (argc == 2 && strcmp (argv[1], "--test") == 0)
+    {
+      testGettingFileSize ();
+      testGettingNumberOfLines ();
+      testUpperCase ();
+      testComparingStrings ();
+      testComparingStringsFromEnd ();
+    }
+  if (argc == 5)
+    {
+      if (strcmp (argv[1], "-i") == 0)
+        {
+          filename = argv[2];
+        }
+      if (strcmp (argv[3], "-o") == 0)
+        {
+          output_name = argv[4];
+        }
+    }
 
-
-  printf ("Provide filepath to file you want to sort strings in: ");
-
-  char filename[FILENAME_MAX] = {};
-  scanf ("%s", filename);
+#if MEOW
 
   int file_size = getFileSize (filename);
   char *file_data = (char *) calloc (file_size + 1, sizeof (char));
@@ -31,17 +45,17 @@ int main ()
   auto *index = (StringBoundaries *) calloc (n_lines, sizeof (StringBoundaries));
 
   getStringsBoundaries (file_data, file_size, index);
+
+#endif
+
   sortStrings (index, n_lines);
 
-  printf ("Provide filepath for storing sorted data: ");
-  scanf ("%s", filename);
-
-  writeFileFromIndex (filename, index, n_lines);
+  writeFileFromIndex (output_name, index, n_lines);
 
   sortStringsBackwards (index, n_lines);
 
-  writeFileFromIndex (filename, index, n_lines);
-  writeFileFromBuffer (filename, file_data_copy, file_size);
+  writeFileFromIndex (output_name, index, n_lines);
+  writeFileFromBuffer (output_name, file_data_copy, file_size);
 
   free (file_data);
   free (file_data_copy);

@@ -28,3 +28,5 @@ void sortStringsBackwards (StringBoundaries *index, int n_lines);
 
 char upperCase (char letter);
 
+int loadFile (char *filename, char *file_data, char *file_data_copy, StringBoundaries *index, int *file_size);
+
